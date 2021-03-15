@@ -1,0 +1,4 @@
+"currency": {
+"type": "string",
+"enum": ["RUB", "USD"]
+}
