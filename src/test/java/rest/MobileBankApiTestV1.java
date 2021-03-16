@@ -1,7 +1,5 @@
 package rest;
 
-import io.restassured.module.jsv.JsonSchemaValidator;
-import org.apache.commons.codec.digest.UnixCrypt;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -10,15 +8,14 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 class MobileBankApiTestV1 {
     @Test
     void shouldReturnDemoAccounts() {
-      // Given - When - Then
-      // Предусловия
-      given()
+
+        given()
           .baseUri("http://localhost:9999/api/v1")
-      // Выполняемые действия
-      .when()
+
+                .when()
           .get("/demo/accounts")
-      // Проверки
-      .then()
+
+                .then()
           .statusCode(200)
      .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
     }
